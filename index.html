@@ -274,7 +274,13 @@
       </div>
 
       <div class="contact-form-wrap">
-        <form id="contactForm">
+        <form id="contactForm"
+              action="https://formsubmit.co/joyculanculanjr@gmail.com"
+              method="POST"
+              target="formsubmitFallbackFrame">
+          <input type="hidden" name="_subject" value="New Portfolio Inquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_url" id="formPageUrl" value="">
           <div class="form-row">
             <label>
               <span>Name</span>
@@ -320,6 +326,7 @@
             </button>
           </div>
         </form>
+        <iframe name="formsubmitFallbackFrame" id="formsubmitFallbackFrame" title="Contact form delivery" hidden></iframe>
       </div>
     </div>
   </div>

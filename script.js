@@ -344,17 +344,25 @@ contactForm?.addEventListener('submit',async(e)=>{
   const submitButton = contactForm.querySelector('button[type="submit"]');
   const formData = new FormData(contactForm);
 
-  // Honeypot: silently ignore obvious bot fills.
+  // Honeypot: ignore obvious bot fills.
   if(formData.get('_honey')) return;
+
+  const visitorEmail = String(formData.get('email') || '').trim();
+  const currentUrl = window.location.href;
+
+  const pageUrlField = document.getElementById('formPageUrl');
+  if(pageUrlField) pageUrlField.value = currentUrl;
 
   const payload = {
     name: formData.get('name'),
-    email: formData.get('email'),
+    email: visitorEmail,
+    _replyto: visitorEmail,
     company: formData.get('company') || 'Not provided',
     project_type: formData.get('project_type'),
     message: formData.get('message'),
     _subject: `New Portfolio Inquiry — ${formData.get('project_type')}`,
-    _template: 'table'
+    _template: 'table',
+    _url: currentUrl
   };
 
   submitButton.disabled = true;
@@ -372,17 +380,55 @@ contactForm?.addEventListener('submit',async(e)=>{
     });
 
     const data = await response.json().catch(()=>({}));
-    if(!response.ok || data.success === 'false' || data.success === false){
-      throw new Error(data.message || 'Unable to send');
+    const success =
+      response.ok &&
+      (data.success === true || data.success === 'true' || data.success === undefined);
+
+    if(!success){
+      throw new Error(data.message || `Form service returned ${response.status}`);
     }
 
     contactFormStatus.className = 'success';
-    contactFormStatus.textContent = 'Message sent. Thank you — I’ll receive it by email.';
+
+    const message = String(data.message || '').toLowerCase();
+    if(message.includes('activate') || message.includes('confirm')){
+      contactFormStatus.textContent =
+        'Almost done — check joyculanculanjr@gmail.com for the FormSubmit activation email and confirm it once.';
+    }else{
+      contactFormStatus.textContent =
+        'Message sent successfully. I’ll receive it by email.';
+    }
+
     contactForm.reset();
+
   }catch(error){
-    contactFormStatus.className = 'error';
-    contactFormStatus.textContent =
-      'The form could not send right now. Please email me directly at joyculanculanjr@gmail.com.';
+    /*
+      Reliable fallback:
+      submit the same form using FormSubmit's normal HTML POST endpoint
+      into a hidden iframe. This avoids losing the modal/page when AJAX
+      is blocked by a browser, extension, or CORS/network policy.
+    */
+    try{
+      const subjectField = contactForm.querySelector('input[name="_subject"]');
+      if(subjectField){
+        subjectField.value = `New Portfolio Inquiry — ${formData.get('project_type')}`;
+      }
+
+      const urlField = contactForm.querySelector('input[name="_url"]');
+      if(urlField) urlField.value = currentUrl;
+
+      HTMLFormElement.prototype.submit.call(contactForm);
+
+      contactFormStatus.className = 'success';
+      contactFormStatus.textContent =
+        'Your inquiry was submitted. If this is the first message from the site, check joyculanculanjr@gmail.com and confirm the FormSubmit activation email once.';
+      contactForm.reset();
+
+    }catch(fallbackError){
+      contactFormStatus.className = 'error';
+      contactFormStatus.textContent =
+        'The form service is unavailable right now. Please email me directly at joyculanculanjr@gmail.com.';
+    }
   }finally{
     submitButton.disabled = false;
   }

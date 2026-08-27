@@ -115,3 +115,11 @@ The profile currently uses a clean `JC` monogram. A real profile photo can be ad
 - Refined About Me copy to sound more personal, premium, and production-focused.
 - Added `.nojekyll` for clean static GitHub Pages publishing.
 - Added `DEPLOY_TO_GITHUB.md` with deployment steps.
+
+
+## V11 — email form reliability fix
+- Added `_url` with the exact deployed page URL.
+- Added `_replyto` so replying to an inquiry targets the visitor.
+- Added a normal HTML POST fallback when AJAX fails.
+- Added a hidden iframe so fallback submissions do not navigate away from the portfolio.
+- Added activation-aware status messages.
