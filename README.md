@@ -109,3 +109,9 @@ The profile currently uses a clean `JC` monogram. A real profile photo can be ad
 - Replaced the JC monogram in the About section with the uploaded portrait image.
 - Replaced the modal profile icon with the same real portrait.
 - Best used with GitHub Pages deployment or local preview via `START_PORTFOLIO.bat`.
+
+
+## V9 — premium About copy + GitHub-ready
+- Refined About Me copy to sound more personal, premium, and production-focused.
+- Added `.nojekyll` for clean static GitHub Pages publishing.
+- Added `DEPLOY_TO_GITHUB.md` with deployment steps.

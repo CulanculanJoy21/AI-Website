@@ -460,15 +460,6 @@ document.addEventListener('keydown',e=>{
 
 
 
-/* ---------- Local file mode notice ---------- */
-const localFileNotice = document.getElementById('localFileNotice');
-
-if(location.protocol === 'file:' && localFileNotice){
-  localFileNotice.hidden = false;
-  localFileNotice.querySelector('button')?.addEventListener('click',()=>{
-    localFileNotice.hidden = true;
-  });
-}
 
 
 renderProjects();
