@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AI Video Specialist portfolio showcasing VSL, UGC, 2D animation, Pixar-style 3D animation, and skeleton/anatomy animation." />
+  <title>Joy Culanculan — AI Video Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="localFileNotice" class="local-file-notice" hidden>
+    <strong>Local preview mode</strong>
+    <span>Featured videos play locally. For Google Drive portfolio videos and the contact form, use START_PORTFOLIO.bat or deploy to GitHub Pages.</span>
+    <button type="button" aria-label="Close notice">×</button>
+  </div>
+  <div id="cursorGlow" class="cursor-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#about" aria-label="Home">
+      <span class="brand-mark">JC</span>
+      <span class="brand-text">AI VIDEO SPECIALIST</span>
+    </a>
+    <nav>
+      <a href="#about">About Me</a>
+      <a href="#featured">Featured</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a class="nav-cta" href="#contact" data-contact-open>Hire me</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section id="about" class="about-section section-shell reveal-section">
+      <div class="about-feature">
+        <div class="about-profile-card">
+          <div class="about-avatar">
+            <img src="assets/profile/joy-profile.png" alt="Portrait of Joy Culanculan">
+            <div class="about-avatar-ring"></div>
+          </div>
+
+          <div class="about-profile-meta">
+            <p class="kicker">ABOUT ME</p>
+            <h2>Joy Culanculan</h2>
+            <p class="about-role">AI Video Specialist & Video Editor</p>
+            <div class="about-status"><span></span> Open to freelance & creative projects</div>
+          </div>
+        </div>
+
+        <div class="about-feature-copy">
+          <h3>I turn ideas, scripts, and references into polished AI video creatives.</h3>
+          <p>I work across AI UGC, VSL editing, 2D animation, stylized 3D animation, and anatomy-driven visuals. My focus is making AI-generated footage feel intentionally produced: consistent characters, clear storytelling, believable motion, strong hooks, and clean final edits.</p>
+
+          <div class="about-mini-grid">
+            <div>
+              <span>01</span>
+              <strong>Creative Direction</strong>
+              <p>Scene planning, references, hooks, pacing, and visual execution.</p>
+            </div>
+            <div>
+              <span>02</span>
+              <strong>AI Production</strong>
+              <p>Prompting, avatar continuity, animation, lip-sync, and generation workflows.</p>
+            </div>
+            <div>
+              <span>03</span>
+              <strong>Post-Production</strong>
+              <p>Editing, sound, captions, compositing, polish, and final delivery.</p>
+            </div>
+          </div>
+
+          <div class="about-actions">
+            <button class="btn primary" type="button" data-about-open>More about me</button>
+            <button class="btn ghost contact-open-button" type="button" data-contact-open>Work with me</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="hero featured-hero section-shell reveal-section">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> Featured work</div>
+        <h1>Selected work that shows <span>what I can build.</span></h1>
+        <p class="hero-lede">A rotating selection of my AI video work across product ads, UGC, and stylized animation. Use the arrows or thumbnails to switch featured projects.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#work">Explore all projects</a>
+          <a class="btn ghost" href="#contact" data-contact-open>Start a project</a>
+        </div>
+        <div class="hero-meta">
+          <span>AI UGC</span><i></i><span>VSL</span><i></i><span>2D Animation</span><i></i><span>3D Animation</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Featured portfolio showcase">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+
+        <div class="featured-showcase">
+          <div class="featured-stage">
+            <button class="featured-arrow featured-prev" type="button" aria-label="Previous featured video">←</button>
+
+            <button class="featured-card" id="featuredCard" type="button" aria-label="Play featured video">
+              <img id="featuredImage" class="featured-image" src="" alt="">
+              <div class="featured-overlay"></div>
+              <div class="featured-topline">
+                <span id="featuredCounter">01 / 03</span>
+                <span>FEATURED WORK</span>
+              </div>
+              <div class="featured-play">▶</div>
+              <div class="featured-copy">
+                <small id="featuredCategory"></small>
+                <strong id="featuredTitle"></strong>
+                <p id="featuredDesc"></p>
+              </div>
+            </button>
+
+            <button class="featured-arrow featured-next" type="button" aria-label="Next featured video">→</button>
+          </div>
+
+          <div class="featured-picker" id="featuredPicker" aria-label="Choose featured project"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="work-section section-shell reveal-section">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">SELECTED WORK</p>
+          <h2>Built across formats.<br>Designed for attention.</h2>
+        </div>
+        <p class="section-note">Filter by format and open any project to watch it directly from the portfolio.</p>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="ugc">UGC</button>
+        <button class="filter" data-filter="vsl">VSL</button>
+        <button class="filter" data-filter="musical">Musical VSL</button>
+        <button class="filter" data-filter="pixar-3d">Pixar 3D</button>
+        <button class="filter" data-filter="2d-animation">2D Animation</button>
+        <button class="filter" data-filter="skeleton-animation">Skeleton</button>
+      </div>
+
+      <div class="project-grid" id="projectGrid"></div>
+    </section>
+
+    <section id="services" class="services-section section-shell reveal-section">
+      <div class="section-heading compact">
+        <div>
+          <p class="kicker">WHAT I DO</p>
+          <h2>From concept to final cut.</h2>
+        </div>
+      </div>
+      <div class="services-grid">
+        <article class="service-card"><span>01</span><h3>AI UGC</h3><p>Creator-style ads with realistic avatars, dialogue, product handling, hooks and direct-response pacing.</p></article>
+        <article class="service-card"><span>02</span><h3>VSL Editing</h3><p>Longer-form ad edits with visual pattern interrupts, supporting B-roll, product storytelling and conversion-focused structure.</p></article>
+        <article class="service-card"><span>03</span><h3>AI Animation</h3><p>2D, stylized 3D, Pixar-inspired, skeleton/anatomy and other visual styles designed around the script.</p></article>
+        <article class="service-card"><span>04</span><h3>Creative Production</h3><p>Prompt design, scene planning, avatar continuity, voice, sound, compositing, captions and final vertical delivery.</p></article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section section-shell reveal-section">
+      <div class="contact-card">
+        <p class="kicker">LET'S WORK</p>
+        <h2>Need AI video that actually feels produced?</h2>
+        <p>Send me your project details and I’ll receive your inquiry directly by email.</p>
+        <button class="btn primary contact-open-button" type="button" data-contact-open>Contact me</button>
+
+        <div class="public-contact-row">
+          <a href="mailto:joyculanculanjr@gmail.com">Email</a>
+          <button type="button" data-copy-discord="joyculanculan21">Discord · joyculanculan21</button>
+          <a href="https://t.me/joyculanculan" target="_blank" rel="noopener">Telegram · @joyculanculan</a>
+          <a href="https://wa.me/639518364107" target="_blank" rel="noopener">WhatsApp · +63 951 836 4107</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <span>© 2026 Joy Culanculan</span>
+    <span>AI Video Specialist</span>
+  </footer>
+
+
+
+  <div class="about-modal" id="aboutModal" aria-hidden="true">
+    <div class="about-modal-backdrop" data-about-close></div>
+
+    <div class="about-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
+      <button class="about-modal-close" type="button" data-about-close aria-label="Close about me">×</button>
+
+      <div class="about-modal-hero">
+        <div class="about-modal-avatar">
+          <img src="assets/profile/joy-profile.png" alt="Portrait of Joy Culanculan">
+        </div>
+        <div>
+          <p class="kicker">PROFILE</p>
+          <h2 id="aboutModalTitle">Joy Culanculan</h2>
+          <p>AI Video Specialist & Video Editor</p>
+        </div>
+      </div>
+
+      <div class="about-modal-body">
+        <div class="about-story">
+          <h3>What I do</h3>
+          <p>I create AI-powered video creatives for brands, products, and performance marketing. I can take a concept from a rough script or reference and build the full visual execution — including AI generation, scene continuity, editing, sound, and final delivery.</p>
+
+          <p>My portfolio includes realistic AI UGC, VSLs, 2D animation, Pixar-style 3D work, skeleton/anatomy animation, product ads, and experimental AI video formats.</p>
+        </div>
+
+        <div class="about-modal-columns">
+          <div class="about-modal-panel">
+            <span class="about-panel-number">01</span>
+            <h4>My approach</h4>
+            <p>I treat AI as a production tool, not a shortcut. I plan the shots, lock continuity, control movement, and edit the result so the final video feels cohesive instead of generated scene by scene.</p>
+          </div>
+
+          <div class="about-modal-panel">
+            <span class="about-panel-number">02</span>
+            <h4>What I care about</h4>
+            <p>Strong first seconds, believable character movement, clean product visibility, consistent visual identity, smooth pacing, and a final result that fits the platform it was made for.</p>
+          </div>
+        </div>
+
+        <div class="about-tools-section">
+          <span class="about-tools-label">TOOLS & WORKFLOWS</span>
+          <div class="tool-row about-tool-row">
+            <span>Kling</span>
+            <span>Seedance</span>
+            <span>Veo</span>
+            <span>CapCut</span>
+            <span>ElevenLabs</span>
+            <span>Suno</span>
+          </div>
+        </div>
+
+        <div class="about-modal-cta">
+          <div>
+            <small>AVAILABLE FOR</small>
+            <strong>AI video production, editing & creative work</strong>
+          </div>
+          <button class="btn primary" type="button" data-about-contact>Start a project</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-modal" id="contactModal" aria-hidden="true">
+    <div class="contact-modal-backdrop" data-contact-close></div>
+    <div class="contact-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+      <button class="contact-modal-close" type="button" data-contact-close aria-label="Close contact form">×</button>
+
+      <div class="contact-modal-details">
+        <p class="kicker">HIRE ME</p>
+        <h2 id="contactModalTitle">Tell me about your project.</h2>
+        <p class="contact-intro">Share what you need, your preferred video style, and any reference or deadline. Your message is sent directly to my email.</p>
+
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:joyculanculanjr@gmail.com">
+            <span>Email</span>
+            <strong>joyculanculanjr@gmail.com</strong>
+          </a>
+
+          <button class="contact-link contact-copy-link" id="discordContact" type="button" data-copy-discord="joyculanculan21">
+            <span>Discord</span>
+            <strong>joyculanculan21</strong>
+          </button>
+
+          <a class="contact-link" id="telegramContact" href="https://t.me/joyculanculan" target="_blank" rel="noopener">
+            <span>Telegram</span>
+            <strong>@joyculanculan</strong>
+          </a>
+
+          <a class="contact-link" id="whatsappContact" href="https://wa.me/639518364107" target="_blank" rel="noopener">
+            <span>WhatsApp</span>
+            <strong>+63 951 836 4107</strong>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap">
+        <form id="contactForm">
+          <div class="form-row">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" autocomplete="name" placeholder="Your name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" autocomplete="email" placeholder="you@company.com" required>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              <span>Company / Brand</span>
+              <input type="text" name="company" autocomplete="organization" placeholder="Optional">
+            </label>
+            <label>
+              <span>Project type</span>
+              <select name="project_type" required>
+                <option value="" selected disabled>Select one</option>
+                <option>AI UGC</option>
+                <option>VSL</option>
+                <option>2D Animation</option>
+                <option>Pixar 3D Animation</option>
+                <option>Skeleton / Anatomy Animation</option>
+                <option>Other AI Video Project</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="message-label">
+            <span>Message</span>
+            <textarea name="message" rows="7" placeholder="Tell me about your project, goals, references, deadline, and deliverables…" required></textarea>
+          </label>
+
+          <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off">
+
+          <div class="form-footer">
+            <p id="contactFormStatus" role="status" aria-live="polite">I usually need the project scope, style, and deadline to quote accurately.</p>
+            <button class="btn primary send-message-button" type="submit">
+              <span>Send message</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="videoModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close-modal aria-label="Close">×</button>
+      <div class="modal-video-wrap">
+        <div class="video-loading">Loading video…</div>
+
+        <video id="localVideoPlayer" class="local-video-player" controls playsinline preload="metadata">
+          Your browser does not support HTML5 video.
+        </video>
+
+        <iframe id="videoFrame" src="about:blank" allow="autoplay; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <div class="modal-info">
+        <div>
+          <span id="modalCategory"></span>
+          <h3 id="modalTitle"></h3>
+        </div>
+        <a id="videoExternalLink" class="video-external-link" href="#" target="_blank" rel="noopener">Open in Google Drive ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="featured-data.js"></script>
+  <script src="portfolio-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
