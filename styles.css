@@ -1298,3 +1298,34 @@ main,
   object-fit:cover;
   display:block;
 }
+/* JC LOGO */
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000;
+  color: #fff;
+
+  border-radius: 10px;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+
+  line-height: 1;
+  user-select: none;
+}
+
+.brand-mark:hover {
+  transform: scale(1.05);
+}
+
+.brand-mark {
+  transition: transform 0.2s ease;
+}
