@@ -8,10 +8,16 @@ const modalCategory = document.getElementById('modalCategory');
 const videoExternalLink = document.getElementById('videoExternalLink');
 let clearVideoTimer = null;
 const cursorGlow = document.getElementById('cursorGlow');
+const autoplayController = window.AutoplayPreview?.createViewportAutoplayController({ threshold: 0.35 });
 
 function driveThumb(id){
   return `https://drive.google.com/thumbnail?id=${id}&sz=w1200`;
 }
+
+function driveVideo(id){
+  return `https://drive.google.com/uc?export=preview&id=${id}`;
+}
+
 
 /* ---------- Render portfolio ---------- */
 function renderProjects(){
@@ -39,6 +45,18 @@ function renderProjects(){
           loading="lazy"
         >
 
+        <video
+          class="project-autoplay-video"
+          data-src="${driveVideo(p.id)}"
+          muted
+          loop
+          playsinline
+          autoplay
+          preload="metadata"
+          poster="${driveThumb(p.id)}"
+          aria-label="Muted autoplay preview of ${p.title}"
+        ></video>
+
         <div class="project-shade"></div>
       </div>
 
@@ -54,6 +72,11 @@ function renderProjects(){
 
     const img = card.querySelector('.project-thumb');
     img.addEventListener('error', () => img.classList.add('thumb-error'), {once:true});
+
+    const video = card.querySelector('.project-autoplay-video');
+    video.addEventListener('loadeddata', () => video.classList.add('is-ready'), {once:true});
+    video.addEventListener('error', () => video.classList.add('preview-error'), {once:true});
+    if (autoplayController) autoplayController.observe(video);
 
     card.addEventListener('click',()=>openVideo(p));
     grid.appendChild(card);
@@ -338,100 +361,38 @@ document.addEventListener('keydown',e=>{
   if(e.key==='Escape' && contactModal?.classList.contains('open')) closeContactModal();
 });
 
-contactForm?.addEventListener('submit',async(e)=>{
-  e.preventDefault();
-
-  const submitButton = contactForm.querySelector('button[type="submit"]');
+contactForm?.addEventListener('submit',(e)=>{
   const formData = new FormData(contactForm);
 
-  // Honeypot: ignore obvious bot fills.
-  if(formData.get('_honey')) return;
+  // Honeypot: do not submit obvious bot fills.
+  if(formData.get('_honey')){
+    e.preventDefault();
+    return;
+  }
 
   const visitorEmail = String(formData.get('email') || '').trim();
-  const currentUrl = window.location.href;
+  const projectType = String(formData.get('project_type') || 'Project');
 
-  const pageUrlField = document.getElementById('formPageUrl');
-  if(pageUrlField) pageUrlField.value = currentUrl;
+  const replyTo = document.getElementById('formReplyTo');
+  const subject = document.getElementById('formSubject');
+  const nextUrl = document.getElementById('formNextUrl');
+  const pageUrl = document.getElementById('formPageUrl');
 
-  const payload = {
-    name: formData.get('name'),
-    email: visitorEmail,
-    _replyto: visitorEmail,
-    company: formData.get('company') || 'Not provided',
-    project_type: formData.get('project_type'),
-    message: formData.get('message'),
-    _subject: `New Portfolio Inquiry — ${formData.get('project_type')}`,
-    _template: 'table',
-    _url: currentUrl
-  };
+  if(replyTo) replyTo.value = visitorEmail;
+  if(subject) subject.value = `New Portfolio Inquiry — ${projectType}`;
 
-  submitButton.disabled = true;
+  const thanksUrl = new URL('thank-you.html', window.location.href).href;
+  if(nextUrl) nextUrl.value = thanksUrl;
+  if(pageUrl) pageUrl.value = window.location.href;
+
   contactFormStatus.className = '';
-  contactFormStatus.textContent = 'Sending your message…';
+  contactFormStatus.textContent = 'Sending securely…';
 
-  try{
-    const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_DETAILS.email}`,{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'Accept':'application/json'
-      },
-      body:JSON.stringify(payload)
-    });
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  if(submitButton) submitButton.disabled = true;
 
-    const data = await response.json().catch(()=>({}));
-    const success =
-      response.ok &&
-      (data.success === true || data.success === 'true' || data.success === undefined);
-
-    if(!success){
-      throw new Error(data.message || `Form service returned ${response.status}`);
-    }
-
-    contactFormStatus.className = 'success';
-
-    const message = String(data.message || '').toLowerCase();
-    if(message.includes('activate') || message.includes('confirm')){
-      contactFormStatus.textContent =
-        'Almost done — check joyculanculanjr@gmail.com for the FormSubmit activation email and confirm it once.';
-    }else{
-      contactFormStatus.textContent =
-        'Message sent successfully. I’ll receive it by email.';
-    }
-
-    contactForm.reset();
-
-  }catch(error){
-    /*
-      Reliable fallback:
-      submit the same form using FormSubmit's normal HTML POST endpoint
-      into a hidden iframe. This avoids losing the modal/page when AJAX
-      is blocked by a browser, extension, or CORS/network policy.
-    */
-    try{
-      const subjectField = contactForm.querySelector('input[name="_subject"]');
-      if(subjectField){
-        subjectField.value = `New Portfolio Inquiry — ${formData.get('project_type')}`;
-      }
-
-      const urlField = contactForm.querySelector('input[name="_url"]');
-      if(urlField) urlField.value = currentUrl;
-
-      HTMLFormElement.prototype.submit.call(contactForm);
-
-      contactFormStatus.className = 'success';
-      contactFormStatus.textContent =
-        'Your inquiry was submitted. If this is the first message from the site, check joyculanculanjr@gmail.com and confirm the FormSubmit activation email once.';
-      contactForm.reset();
-
-    }catch(fallbackError){
-      contactFormStatus.className = 'error';
-      contactFormStatus.textContent =
-        'The form service is unavailable right now. Please email me directly at joyculanculanjr@gmail.com.';
-    }
-  }finally{
-    submitButton.disabled = false;
-  }
+  // IMPORTANT: do not preventDefault().
+  // The browser now sends the form directly to FormSubmit.
 });
 
 

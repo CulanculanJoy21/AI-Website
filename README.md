@@ -123,3 +123,19 @@ The profile currently uses a clean `JC` monogram. A real profile photo can be ad
 - Added a normal HTML POST fallback when AJAX fails.
 - Added a hidden iframe so fallback submissions do not navigate away from the portfolio.
 - Added activation-aware status messages.
+
+
+## V12 — direct contact-form submission
+- Removed FormSubmit AJAX/fetch entirely.
+- The browser now POSTs directly to FormSubmit, matching its simplest documented integration.
+- Added visitor email as Reply-To.
+- Added exact page URL.
+- Added local `thank-you.html` return page.
+- First use still requires one FormSubmit activation email confirmation.
+
+## V13 — autoplay portfolio previews
+- Portfolio cards now use muted, looping HTML5 video previews.
+- A preview only loads when its card enters the viewport, reducing unnecessary bandwidth.
+- Videos pause automatically when scrolled off-screen.
+- Clicking a card still opens the full player for normal viewing/audio.
+- Thumbnail and designed fallback remain underneath while a preview loads or if Google Drive cannot provide the stream.
