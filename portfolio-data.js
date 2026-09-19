@@ -1,5 +1,61 @@
 window.PORTFOLIO_PROJECTS = [
   {
+    "title": "M.P Lip — B61",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "1oy8HWHHl-vfHtx-d-zS7CMjMmPQfIuxP",
+    "desc": "Stylized 3D AI animation"
+  },
+  {
+    "title": "M.P Lip — B64",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "1mHGEKGTMhg8-V4GFvk1Aun7jSOeJbEht",
+    "desc": "Stylized 3D AI animation"
+  },
+  {
+    "title": "M.P Lip — B63",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "1lVe3NutM_wBSMcL9CMlbO-sa_77gV82W",
+    "desc": "Stylized 3D AI animation"
+  },
+  {
+    "title": "M.P Lip B51 — Hook 2 v2",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "19LgnPoMTOe0VAyoIEX3WNpmmQrT4g8y_",
+    "desc": "Stylized 3D hook variation"
+  },
+  {
+    "title": "M.P Lip B51 — Hook 3 v2",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "1zSsbqkZYAdD3G37fdskSTdO7mDwTJvQw",
+    "desc": "Stylized 3D hook variation"
+  },
+  {
+    "title": "M.P Lip B51 — Hook 3",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "1UMEqGBpcUarWAKIYVtvmej0Z5Kctmfbz",
+    "desc": "Stylized 3D hook variation"
+  },
+  {
+    "title": "M.P Lip B51 — Hook 2",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "14tIOJCqn0yao-Tw7w0rm0SfeA3Oek853",
+    "desc": "Stylized 3D hook variation"
+  },
+  {
+    "title": "M.P Lip B51 — Hook 1",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "1-_k5zT8e6PpePD5ULHPZGZVCzQkKkGAr",
+    "desc": "Stylized 3D hook variation"
+  },
+  {
     "title": "3 Inches Added Where It Counts",
     "category": "Pixar 3D",
     "filter": "pixar-3d",
@@ -21,11 +77,18 @@ window.PORTFOLIO_PROJECTS = [
     "desc": "Animated transformation journal"
   },
   {
-    "title": "KIRA — Test Task",
+    "title": "Vaping",
     "category": "Pixar 3D",
     "filter": "pixar-3d",
     "id": "1vNy_07WJY3hcIciwKQKKhYOq4LQqPCJ_",
-    "desc": "Stylized AI animation"
+    "desc": "Stylized 3D AI animation"
+  },
+  {
+    "title": "M.P Lip — B25",
+    "category": "2D Animation",
+    "filter": "2d-animation",
+    "id": "1VuIJSuW6sBAr7SOJwXp5BbfzR1ybtNfO",
+    "desc": "2D animated creative"
   },
   {
     "title": "Hairbrush Crime Scene — Deficiency Reveal",
@@ -47,6 +110,27 @@ window.PORTFOLIO_PROJECTS = [
     "filter": "2d-animation",
     "id": "1xqe5N1Mkove1mEUmkT0sAh-8PEgQNES9",
     "desc": "POV visual storytelling"
+  },
+  {
+    "title": "Top Things to Grow Your Glutes — Ranked Listicle",
+    "category": "Skeleton Animation",
+    "filter": "skeleton-animation",
+    "id": "1IZ0nbhm8d5xQHyv7xLMtMPUgmhj3p_91",
+    "desc": "Anatomy-style ranked listicle animation"
+  },
+  {
+    "title": "M.P Lip — B57",
+    "category": "Skeleton Animation",
+    "filter": "skeleton-animation",
+    "id": "139Wo1EKFqe-A_7Tjo9FnfzJrPYzYLzzR",
+    "desc": "Skeleton / anatomy-style animation"
+  },
+  {
+    "title": "Stubborn Leg Texture — What's Actually Underneath",
+    "category": "Skeleton Animation",
+    "filter": "skeleton-animation",
+    "id": "1m9UyNP7JbqlrwBCpHwNInttcWv_QMsWf",
+    "desc": "Anatomy-driven visual explainer"
   },
   {
     "title": "Tiny Booty Not Genetics — Just Need Creatine",
@@ -75,6 +159,20 @@ window.PORTFOLIO_PROJECTS = [
     "filter": "skeleton-animation",
     "id": "1XvEg8QsEisytdb7Gxnnc4wyA75tDiP2c",
     "desc": "DIY remedy visual explainer"
+  },
+  {
+    "title": "M.P Lip — B62",
+    "category": "Claymation",
+    "filter": "claymation",
+    "id": "12Ct9eIfdvosiVep53QbQ4rw44nzQ8xXo",
+    "desc": "Claymation-style AI animation"
+  },
+  {
+    "title": "M.P Lip — B35",
+    "category": "Claymation",
+    "filter": "claymation",
+    "id": "1w8k1_zaO84UtXgbGqQEK6UBFVIIMSK2V",
+    "desc": "Claymation-style AI animation"
   },
   {
     "title": "LymphoDefend sp4 — R17",
@@ -194,6 +292,55 @@ window.PORTFOLIO_PROJECTS = [
     "filter": "musical",
     "id": "1cNMEuMkWaeeVPUB6vufTcx4p4DlIcLDb",
     "desc": "Music-driven VSL creative"
+  },
+  {
+    "title": "M.P Lip — B72",
+    "category": "UGC",
+    "filter": "ugc",
+    "id": "1-v6d4_uvSWzbF8mu14WnqnLOx2JelHD-",
+    "desc": "AI UGC creative"
+  },
+  {
+    "title": "Almost Returning This Tub — Spanish",
+    "category": "UGC",
+    "filter": "ugc",
+    "id": "1EFiUXIU9z9Hn08VM1ujLdbabXKiJRZWv",
+    "desc": "Spanish-language AI UGC creative"
+  },
+  {
+    "title": "Almost Returning This Tub — English",
+    "category": "UGC",
+    "filter": "ugc",
+    "id": "1hGNrhVzEr_Lhf1386LmqTHMuzvP1jdEU",
+    "desc": "English-language AI UGC creative"
+  },
+  {
+    "title": "Top Things to Grow Your Glutes — Ranked Listicle",
+    "category": "UGC",
+    "filter": "ugc",
+    "id": "13pdJTdI82ZvQ9ouC8EwOIwutVLLp-lPE",
+    "desc": "AI UGC ranked-list creative"
+  },
+  {
+    "title": "The Shot Took the Weight and the Shape",
+    "category": "UGC",
+    "filter": "ugc",
+    "id": "1TpfZ6Epg1V29W5Sfzli8ik4K0PF8IQ2-",
+    "desc": "GLP comparison-style AI UGC creative"
+  },
+  {
+    "title": "SB TikTok Clone GLP #20 — @josina_munson",
+    "category": "UGC",
+    "filter": "ugc",
+    "id": "1eHqAIooqWiYD0UClSqk5EuLFAWsyhpbS",
+    "desc": "TikTok-style AI UGC creative"
+  },
+  {
+    "title": "Leg Day Warm-Up Routine — Creatine Overnight",
+    "category": "UGC",
+    "filter": "ugc",
+    "id": "1oum-CiTTUsPfKbEncNFBpIP5Jdg-ud72",
+    "desc": "Fitness-focused AI UGC creative"
   },
   {
     "title": "Fitness Model Ranks Glute Methods",

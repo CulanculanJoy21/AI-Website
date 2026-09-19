@@ -8,16 +8,10 @@ const modalCategory = document.getElementById('modalCategory');
 const videoExternalLink = document.getElementById('videoExternalLink');
 let clearVideoTimer = null;
 const cursorGlow = document.getElementById('cursorGlow');
-const autoplayController = window.AutoplayPreview?.createViewportAutoplayController({ threshold: 0.35 });
 
 function driveThumb(id){
   return `https://drive.google.com/thumbnail?id=${id}&sz=w1200`;
 }
-
-function driveVideo(id){
-  return `https://drive.google.com/uc?export=preview&id=${id}`;
-}
-
 
 /* ---------- Render portfolio ---------- */
 function renderProjects(){
@@ -45,18 +39,6 @@ function renderProjects(){
           loading="lazy"
         >
 
-        <video
-          class="project-autoplay-video"
-          data-src="${driveVideo(p.id)}"
-          muted
-          loop
-          playsinline
-          autoplay
-          preload="metadata"
-          poster="${driveThumb(p.id)}"
-          aria-label="Muted autoplay preview of ${p.title}"
-        ></video>
-
         <div class="project-shade"></div>
       </div>
 
@@ -72,11 +54,6 @@ function renderProjects(){
 
     const img = card.querySelector('.project-thumb');
     img.addEventListener('error', () => img.classList.add('thumb-error'), {once:true});
-
-    const video = card.querySelector('.project-autoplay-video');
-    video.addEventListener('loadeddata', () => video.classList.add('is-ready'), {once:true});
-    video.addEventListener('error', () => video.classList.add('preview-error'), {once:true});
-    if (autoplayController) autoplayController.observe(video);
 
     card.addEventListener('click',()=>openVideo(p));
     grid.appendChild(card);
