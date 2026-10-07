@@ -1,5 +1,33 @@
 window.PORTFOLIO_PROJECTS = [
   {
+    "title": "M.P Lip — B102",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "1ylNkt5shQfrXS_BkrEEXaun_zK4humxn",
+    "desc": "Stylized 3D AI animation"
+  },
+  {
+    "title": "M.P Lip B82 — Hook 3",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "1dflcskhYGTZNQ6lj4850eRVNaVkXWkAp",
+    "desc": "Stylized 3D hook variation"
+  },
+  {
+    "title": "M.P Lip B82 — Hook 2",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "1JMljsbt8arvrM_ASsdrJAvayH0UPeiZo",
+    "desc": "Stylized 3D hook variation"
+  },
+  {
+    "title": "M.P Lip B82 — Hook 1",
+    "category": "Pixar 3D",
+    "filter": "pixar-3d",
+    "id": "14v2sITkcuh9IkyLzE9s57zFZd3a2VRJi",
+    "desc": "Stylized 3D hook variation"
+  },
+  {
     "title": "M.P Lip — B61",
     "category": "Pixar 3D",
     "filter": "pixar-3d",
@@ -84,6 +112,41 @@ window.PORTFOLIO_PROJECTS = [
     "desc": "Stylized 3D AI animation"
   },
   {
+    "title": "M.P Lip — B110",
+    "category": "2D Animation",
+    "filter": "2d-animation",
+    "id": "1KZ1YfcyrpMigCxFwpQk4kGVwdwgOExsA",
+    "desc": "2D animated creative"
+  },
+  {
+    "title": "M.P Lip — B107",
+    "category": "2D Animation",
+    "filter": "2d-animation",
+    "id": "1jb2iLfFwuLb1AWMxtfpceReqswQpFsqQ",
+    "desc": "2D animated creative"
+  },
+  {
+    "title": "M.P Lip — B104",
+    "category": "2D Animation",
+    "filter": "2d-animation",
+    "id": "1TAVFVmxoNqyZrKG5_PxovK3oFWntXfqk",
+    "desc": "2D animated creative"
+  },
+  {
+    "title": "M.P Lip — B98",
+    "category": "2D Animation",
+    "filter": "2d-animation",
+    "id": "1jP4IDqezJNMg82aAr6C9yJaDD13JE4KV",
+    "desc": "2D animated creative"
+  },
+  {
+    "title": "M.P Lip — B76",
+    "category": "2D Animation",
+    "filter": "2d-animation",
+    "id": "1uL_XUSMJAa6yTCss_ZNF3Zsf4tb6u3w9",
+    "desc": "2D animated creative"
+  },
+  {
     "title": "M.P Lip — B25",
     "category": "2D Animation",
     "filter": "2d-animation",
@@ -110,6 +173,13 @@ window.PORTFOLIO_PROJECTS = [
     "filter": "2d-animation",
     "id": "1xqe5N1Mkove1mEUmkT0sAh-8PEgQNES9",
     "desc": "POV visual storytelling"
+  },
+  {
+    "title": "M.P Lip — B103",
+    "category": "Skeleton Animation",
+    "filter": "skeleton-animation",
+    "id": "1uGjRGb3x35L_8iYvuYaXaJPlWJaaEmT9",
+    "desc": "Skeleton / anatomy-style animation"
   },
   {
     "title": "Top Things to Grow Your Glutes — Ranked Listicle",
@@ -292,6 +362,27 @@ window.PORTFOLIO_PROJECTS = [
     "filter": "musical",
     "id": "1cNMEuMkWaeeVPUB6vufTcx4p4DlIcLDb",
     "desc": "Music-driven VSL creative"
+  },
+  {
+    "title": "M.P Lip — B92",
+    "category": "UGC",
+    "filter": "ugc",
+    "id": "19s7H1f8dkw5CkN6iI9ejUeK1LdvR602O",
+    "desc": "AI UGC creative"
+  },
+  {
+    "title": "M.P Lip — B84",
+    "category": "UGC",
+    "filter": "ugc",
+    "id": "1fF9qPT0e5Dc15RUrNQ7u1QmTXjN3YJ2h",
+    "desc": "AI UGC creative"
+  },
+  {
+    "title": "M.P Lip — B80",
+    "category": "UGC",
+    "filter": "ugc",
+    "id": "1R0VPjiG-v0X3ryvDBWeNDlcouM49pQD6",
+    "desc": "AI UGC creative"
   },
   {
     "title": "M.P Lip — B72",

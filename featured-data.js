@@ -1,23 +1,23 @@
 window.FEATURED_PROJECTS = [
   {
-    "id": "1VuIJSuW6sBAr7SOJwXp5BbfzR1ybtNfO",
-    "title": "M.P lip B25.mp4",
-    "category": "2D Animation",
-    "desc": "2D animated AI video creative.",
-    "thumb": "https://drive.google.com/thumbnail?id=1VuIJSuW6sBAr7SOJwXp5BbfzR1ybtNfO&sz=w1200"
+    "id": "1QwSg_x7PU3AN9LNCukqBVrxpIcGxXXnC",
+    "title": "Nike Dunks Advertisement",
+    "category": "UGC / Product Ad",
+    "desc": "AI-assisted product advertisement with a clean, social-first visual style.",
+    "thumb": "https://drive.google.com/thumbnail?id=1QwSg_x7PU3AN9LNCukqBVrxpIcGxXXnC&sz=w1200"
   },
   {
-    "id": "1w8k1_zaO84UtXgbGqQEK6UBFVIIMSK2V",
-    "title": "M.P lip B35.mp4",
-    "category": "Claymation",
-    "desc": "Claymation-style AI animation with handcrafted stylization.",
-    "thumb": "https://drive.google.com/thumbnail?id=1w8k1_zaO84UtXgbGqQEK6UBFVIIMSK2V&sz=w1200"
+    "id": "1P2OgwULaga0FxKCUfQFM9lkdNDdKl0Ey",
+    "title": "Tired Of Acne",
+    "category": "UGC / Beauty",
+    "desc": "Beauty-focused AI UGC creative designed for short-form performance marketing.",
+    "thumb": "https://drive.google.com/thumbnail?id=1P2OgwULaga0FxKCUfQFM9lkdNDdKl0Ey&sz=w1200"
   },
   {
-    "id": "1lVe3NutM_wBSMcL9CMlbO-sa_77gV82W",
-    "title": "M.P lip B63.mp4",
+    "id": "1VEqyVTExNfF-dUwodXoujsJxwXrOirC5",
+    "title": "Creatine Day 1 to Day 50 Timeline",
     "category": "Pixar 3D",
-    "desc": "Stylized 3D AI animation with cinematic character presentation.",
-    "thumb": "https://drive.google.com/thumbnail?id=1lVe3NutM_wBSMcL9CMlbO-sa_77gV82W&sz=w1200"
+    "desc": "Stylized 3D animated journal showing a Day 1-to-Day 50 transformation story.",
+    "thumb": "https://drive.google.com/thumbnail?id=1VEqyVTExNfF-dUwodXoujsJxwXrOirC5&sz=w1200"
   }
 ];

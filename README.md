@@ -39,7 +39,7 @@ Make sure each portfolio video is shared so website visitors can view it.
 Replace `your@email.com` in `index.html` with the preferred contact email.
 
 ## Current portfolio inventory
-The current build contains all 72 videos found in the organized Drive portfolio folders at the time of this update, and every video card uses the video's Google Drive-generated thumbnail.
+The current build contains all 85 videos found in the organized Drive portfolio folders at the time of this update, and every video card uses the video's Google Drive-generated thumbnail.
 
 ## Cinematic motion
 This build includes:
@@ -152,3 +152,12 @@ The profile currently uses a clean `JC` monogram. A real profile photo can be ad
 ## V15 — Featured Work updated
 - Replaced Featured Work with: `M.P lip B25.mp4`, `M.P lip B35.mp4`, and `M.P lip B63.mp4`.
 - Featured thumbnails now use Google Drive thumbnail URLs for those three selected projects.
+
+
+## V17 — October 2026 Google Drive sync
+- Re-checked all organized Google Drive portfolio folders.
+- Added 13 newly detected videos.
+- Current portfolio total: 85 videos.
+- Added 3 UGC videos, 4 Pixar 3D videos, 5 2D Animation videos, and 1 Skeleton Animation video.
+- VSL, Musical VSL, and Claymation had no new videos in this sync.
+- Featured Work remains: Nike Dunks Advertisement, Tired Of Acne, and Creatine Day 1 to Day 50 Timeline.
